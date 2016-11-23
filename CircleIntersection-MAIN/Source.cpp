@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <stdlib.h>
 
 #define PI 3.1415926535897
 
@@ -282,9 +283,33 @@ int main()
 	Circle circle0;
 	Circle circle1;
 
-	circle0.setObjectData(14, 6, 43);
-	circle1.setObjectData(64, 72, 81);
+	double radius0;
+	double h0;
+	double k0;
 
+	double radius1;
+	double h1;
+	double k1;
+
+	std::cout << "Input Circle #0 -> Radius: " << std::endl;
+	std::cin >> radius0;
+	std::cout << "Input Circle #0 -> H: " << std::endl;
+	std::cin >> h0;
+	std::cout << "Input Circle #0 -> K: " << std::endl;
+	std::cin >> k0;
+
+	std::cout << "Input Circle #1 -> Radius: " << std::endl;
+	std::cin >> radius1;
+	std::cout << "Input Circle #1 -> H: " << std::endl;
+	std::cin >> h1;
+	std::cout << "Input Circle #1 -> K: " << std::endl;
+	std::cin >> k1;
+
+	getchar();
+
+	circle0.setObjectData(radius0, h0, k0);
+	circle1.setObjectData(radius1, h1, k1);
+	
 	Point point0;
 	Point point1;
 
@@ -296,8 +321,9 @@ int main()
 		getIntersections(circle0, circle1);
 
 	}
-
 	getchar();
+
+	return 0;
 
 	/*
 
@@ -325,6 +351,4 @@ int main()
 	//
 	// std::cout << "Distance from -> Point 0 - Point 1: " << point0.getDistance(point1) << std::endl
 
-
-	return 0;
 }
